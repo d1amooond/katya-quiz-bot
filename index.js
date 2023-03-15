@@ -6,7 +6,7 @@ bot.start((ctx) => {
 });
 
 bot.on('text', (ctx) => {
-  if (ctx.message.text.toUpperCase() === 'NGNF') {
+  if (ctx.message.text.toUpperCase() === 'NGSF') {
     console.log(ctx.message)
     // Replace YOUR_FILE_ID with the ID of the file you want to send
     ctx.sendDocument(ctx.message.from?.id, { document: 'BQACAgIAAxkBAAMRZBH7diUJOyA3yK2sbwAB9nSGUcR6AAItJwACnLmRSEgIqPLD4Wl5LwQ' });
