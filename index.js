@@ -7,7 +7,6 @@ bot.start((ctx) => {
 
 bot.on('text', (ctx) => {
   if (ctx.message.text.toUpperCase() === 'NGSF') {
-    console.log(ctx.message)
     // Replace YOUR_FILE_ID with the ID of the file you want to send
     ctx.sendDocument(ctx.message.from?.id, { document: 'BQACAgIAAxkBAAMRZBH7diUJOyA3yK2sbwAB9nSGUcR6AAItJwACnLmRSEgIqPLD4Wl5LwQ' });
     ctx.sendDocument(ctx.message.from?.id, { document: 'BQACAgIAAxkBAAMYZBH8g_jhlRB9hjLbDhUMoW0wnxMAAjYnAAKcuZFIzDt9XhhVFAsvBA' });
@@ -17,3 +16,7 @@ bot.on('text', (ctx) => {
 });
 
 bot.launch();
+
+// Enable graceful stop
+process.once('SIGINT', () => bot.stop('SIGINT'))
+process.once('SIGTERM', () => bot.stop('SIGTERM'))
